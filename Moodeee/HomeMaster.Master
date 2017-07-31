@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomeMaster.master.cs" Inherits="Moodeee.HomeMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Moodeee is a music streaming site which will steam music according to users mood" />
+    <script type="application/x-javascript"> 
+        addEventListener("load", function() 
+        {
+         setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); 
+        } 
+    </script>
+    <link href="App_Themes/CSS/bootstrap.css" rel='stylesheet' type='text/css' />
+    <!-- Custom Theme files -->
+    <link href="App_Themes/CSS/style.css" rel='stylesheet' type='text/css' />
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/CustomJS/simpleCart.min.js"> </script>
+    <!--web-fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Jockey+One|Open+Sans:300italic,400italic,600italic,400,600,700' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Audiowide|Open+Sans:300italic,400italic,600italic,700,300,600,400' rel='stylesheet' type='text/css' />
+    <!--//web-fonts-->
+
+</head>
+<body>
+    <form runat="server">
+        <div class="header" id="home">
+            <div class="header-top">
+                <div class="container">
+                    <div class="logo">
+                        <a href="Home.aspx">
+                            <h1>Moodeee!</h1>
+                        </a>
+                    </div>
+                    <div class="header-right">
+                        <div class="cart box_1" style="color:white">
+                            Welcome,
+                        <asp:LoginName id="LoginName" runat="server"></asp:LoginName>
+                            <br />
+                            <asp:LoginStatus runat="server" ForeColor="White" ></asp:LoginStatus>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+        <!--start-nav-->
+        <div class="top-nav">
+            <div class="container">
+                <div class="home"><a href="Home.aspx"><i class="glyphicon glyphicon-home"></i></a></div>
+                <span class="menu"></span>
+                <div class="top-menu">
+                    <nav class="navigation">
+                        <ul class="cl-effect-16">
+                            <li><a class="active" href="Home.aspx">Home</a></li>
+                            <li><a href="Genres.aspx">Genres</a></li>
+                            <li><a href="Playlist.aspx">Playlist</a></li>
+                            <li><a href="Profile.aspx">Profile</a></li>
+                            <li><a href="ResetPassword.aspx">Settings</a></li>
+                            <li><a href="Comments.aspx">Contact Us</a></li>
+                            <div class="clearfix"></div>
+                        </ul>
+                        <!-- script-menu -->
+                        <script>
+                            $("span.menu").click(function () {
+                                $(".top-menu").slideToggle("slow", function () {
+                                    // Animation complete.
+                                });
+                            });
+                        </script>
+                        <!-- script-menu -->
+                    </nav>
+                </div>
+            </div>
+
+
+
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                </asp:ContentPlaceHolder>
+
+            </div>
+            <div class="footer">
+                <div class="container">
+                    <div class="footer-top">
+                        <div class="copy">
+                            <p>&copy; 2015 Moodeee!. All Rights Reserved  by Moodeee! Developers.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+    </form>
+</body>
+</html>
